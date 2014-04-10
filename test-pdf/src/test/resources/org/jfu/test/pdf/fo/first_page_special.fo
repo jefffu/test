@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="first"
+      page-height="297mm" page-width="210mm" margin-top="20mm"
+      margin-bottom="20mm" margin-left="25mm" margin-right="25mm">
+      <fo:region-body margin-bottom="20mm" />
+      <fo:region-after region-name="footer-first"
+        extent="20mm" />
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="rest"
+      page-height="297mm" page-width="210mm" margin-top="20mm"
+      margin-bottom="20mm" margin-left="25mm" margin-right="25mm">
+      <fo:region-body margin-bottom="20mm" />
+      <fo:region-after region-name="footer-rest" extent="20mm" />
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference
+          page-position="first" master-reference="first" />
+        <fo:conditional-page-master-reference
+          page-position="rest" master-reference="rest" />
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:page-sequence master-reference="document">
+    <fo:static-content flow-name="footer-first">
+      <fo:block text-align="center">First page.</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="footer-rest">
+      <fo:block text-align-last="center">Other page.</fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block font-family="SimSun" line-height="180%">
+        <fo:block font-family="Arial" font-weight="bold"
+          font-style="italic">Hello, FOP!</fo:block>
+        <fo:block font-size="18pt" font-weight="bold">强调日军侵华史不容忘
+        </fo:block>
+        <fo:block font-style="italic">据参考消息3月31日报道【新加坡《联合早报》网站3月30日报道】中国国家主席习近平28日在德国首都柏林发表演讲时表示，日本当年发动的侵华战争，给中国人留下了“刻骨铭心的记忆”。
+        </fo:block>
+        <fo:block>在德国进行国事访问的习近平应德国科尔伯基金会邀请发表演讲，阐释了中国的外交政策与和平发展道路，演讲中两次提及日本当年的战争暴行，表明中国不会忘记。
+        </fo:block>
+        <fo:block>不过，他也同时引用中国古训“己所不欲，勿施于人”，强调中国将坚定不移地走和平发展道路，同世界各国一道维护世界和平，实现自己提高13亿多人口生活水平和质量的发展目标。
+        </fo:block>
+        <fo:block>对于两次世界大战，习近平也表示应“前事不忘，后事之师”，他同时呼吁世界各国都走和平发展的道路。
+        </fo:block>
+        <fo:block>不过，在回答关于中国周边外交政策的问题时，习近平也强调，在事关中国主权和领土完整的重大原则问题上，中国不惹事，但也不怕事，将坚决捍卫中国的正当合法权益。
+        </fo:block>
+        <fo:block>中通社昨天引述不具名的北京学者分析，在习近平访欧之行中，此次演讲是最重要的对外阐释中国外交政策的机会。习近平的表态客观上起到了对日施压效果：一方面显示中国不重蹈历史覆辙的决心，同时也呼吁欧洲各国维护二战战后的和平成果，暗含对日本右倾政策的批评。
+        </fo:block>
+        <fo:block>学者也指出，科尔伯基金会的主要负责人是德国前总统魏茨泽克，他的父亲曾因参加二战在战后被判刑，魏茨泽克在担任总统期间对战争持明确的反对态度。借由他所负责的基金会邀请习近平演讲并谈及战争，是中德双方达成的默契。
+        </fo:block>
+        <fo:block>【香港《南华早报》网站3月30日报道】中国国家主席习近平在访问德国时表示，日本在二战期间的暴行给中国人“留下了刻骨铭心的记忆”，中国必须有足以自卫的国防力量。
+        </fo:block>
+        <fo:block>在柏林发表讲话时，习近平还重申，中国的崛起不会对世界构成任何威胁，并且中国承诺与邻国建立友好伙伴关系。
+        </fo:block>
+        <fo:block>在此前访问法国时发表的讲话中，习近平把中国比作一头“睡醒的狮子”，但他称这是一只“和平的、可亲的、文明的”狮子。
+        </fo:block>
+        <fo:block>在德国首都发表的讲话中，习近平也表示，中国不是墨菲斯托--德国文学作品《浮士德》中的魔鬼形象。
+        </fo:block>
+        <fo:block>他说：“有一些人总是戴着有色眼镜看中国，认为中国发展起来了必然是一种‘威胁’，甚至把中国描绘成一个可怕的‘墨菲斯托’，似乎哪一天中国就要摄取世界的灵魂。”
+        </fo:block>
+        <fo:block>他说，这些观点凸显了对中国的深深偏见。</fo:block>
+        <fo:block>习近平在讲话中两次提到日本的侵略，并称中国明白和平的重要性。</fo:block>
+        <fo:block>显示中方对日强硬姿态</fo:block>
+        <fo:block>【日本《读卖新闻》3月30日报道】
+          正在访德的中国国家主席习近平，通过在历史问题上点名批评日本等突出对日强硬姿态。中国最高领导人在历史问题上如此大张旗鼓批评日本，使本就处于1972年邦交正常化以来最糟糕状态的日中关系面临更加严峻的局面。
+        </fo:block>
+        <fo:block>去年3月就任中国国家主席以来，习近平在公开场合回答提问、披露自身想法是极其罕见的。习近平自身的对外强硬姿态在上述一系列行动中可见一斑。
+        </fo:block>
+        <fo:block>习政权去年5月也曾在公开场合批评日本。</fo:block>
+        <fo:block>当时，李克强访问德国波茨坦，就尖阁诸岛(即我钓鱼岛及其附属岛屿--本网注)问题称日本必须归还所窃取的中国领土。
+        </fo:block>
+        <fo:block>这次习近平批评日本，意在加强对去年底参拜靖国神社的安倍首相施压，同时拉拢韩国总统朴槿惠。朴槿惠25日参加了日美韩峰会，而且26日会见默克尔时未点名批评日本。习近平可能试图通过演讲刺激韩国舆论，营造使朴槿惠不好对日软化态度的环境。
+        </fo:block>
+        <fo:block>【日本《产经新闻》3月30日报道】中国国家主席习近平在演讲中执意批评日本。和今年初动员中国驻世界各地的外交官谴责安倍参拜靖国神社一样，此举也意在拉上第三国孤立日本。
+        </fo:block>
+        <fo:block>习近平访德期间谴责与此行毫不相关的日本，这背后含有批评安倍首相历史认识的目的，提醒德国和日本同为二战战败国，德国对罪行做了深刻反省，日本却毫无诚意。
+        </fo:block>
+        <fo:block>今年1月，反日活动家安重根纪念馆在哈尔滨火车站开馆。2月底，全国人大常委会通过决定，将12月13日设立为南京事件(即南京大屠杀--本网注)国家公祭日。此外，中国政府还动员民间反日活动家，让战时在日被劳役的前中国劳工起诉日本企业。
+        </fo:block>
+        <fo:block>习近平在德国的演讲是上述战略的一环，反日宣传战今后也将持续下去。</fo:block>
+        <fo:block>【德国N-TV电视台网站3月29日文章】中国国家主席习近平在柏林的演讲使用了大量引言、警句和典故。除了一些中国的哲学家和成语外，他还提到了歌德、莱布尼茨、莱辛，以及德国前总理维利·勃兰特。
+        </fo:block>
+        <fo:block>习近平借此想表达的意思很清楚：我努力去理解你们，也请你们这样做！</fo:block>
+        <fo:block>习近平在柏林的讲话表明他的国家将日益走自己的路。中国的良好发展不仅需要国内和谐，而且也需要和平安宁的国际环境。
+        </fo:block>
+        <fo:block>习近平一再强调，不论中国的发展看来是什么样子，都一定是和平的。他用历史来证明，中国5000年的文化一直是和平的文化。他还用充满和平、经济发展和合作特点的“全球趋势”来证明，谁不顺应这一趋势，将“被历史抛弃”。
+        </fo:block>
+        <fo:block>现在习近平保证，中国永远不称霸，永远不搞扩张。</fo:block>
+        <fo:block>日本当局厚颜提出抗议</fo:block>
+        <fo:block>【共同社东京3月30日电】关于中国国家主席习近平在德国演讲时就南京大屠杀称日本屠杀了30多万中国人民一事，日本官房长官菅义伟30日在东京接受记者采访时透露，外务省29日已就此向中方提出抗议。
+        </fo:block>
+        <fo:block>菅义伟就南京大屠杀表示：“不否认旧日本军在南京进行的杀伤及掠夺行为，但关于死难者人数存在各种意见，日本政府未予断定。”
+        </fo:block>
+        <fo:block>他还就日本战后的表现称：“一贯致力于为世界和平作贡献，将在首相安倍晋三的带领下努力实现和平国家的目标，绝不会动摇。”
+        </fo:block>
+        <fo:block>在此前的富士电视台节目中，菅义伟就习近平的发言批评称：“在第三国提及日本的历史并作出如此发言，令人极为遗憾。”
+        </fo:block>
+        <fo:block>中国今年2月以立法形式设立了南京大屠杀死难者公祭日，之后还在荷兰举行的中韩首脑会谈上确认双方将在历史问题上合作等，正在加强对日攻势。
+        </fo:block>
+        <fo:block>【法新社东京3月30日电】东京今天批评中国国家主席习近平在访问德国期间发表的关于日本战争罪行的讲话，称日本政府已经提出了抗议。
+        </fo:block>
+        <fo:block>日本时事通讯社和共同社报道，习近平28日在柏林一家智库发表讲话，批评日本的战争罪行，称1937年日本军队在占领南京时屠杀了30多万人。
+        </fo:block>
+        <fo:block>共同社报道，习近平还称，日本军国主义侵略战争造成3500多万中国人伤亡。</fo:block>
+        <fo:block>日本内阁官房长官菅义伟对记者说：“中国领导人在第三国发表关于日本历史的这种讲话是极其没有建设性的。”他还说，日本外务省29日已经向中国政府提出了抗议。
+        </fo:block>
+        <fo:block>Inner block...</fo:block>
+      </fo:block>
+
+      <fo:block break-before="page">
+        <fo:block space-before.optimum="3pt"
+          space-after.optimum="15pt">
+          Table 1: cell boders
+        </fo:block>
+
+        <fo:table border-collapse="separate" table-layout="fixed" width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="2cm" />
+          <fo:table-column column-width="2cm" />
+          <fo:table-body>
+            <fo:table-row>
+              <fo:table-cell border-left-color="green"
+                border-left-width="0.5pt" border-left-style="solid">
+                <fo:block text-align="center">
+                  green left
+                </fo:block>
+              </fo:table-cell>
+
+              <fo:table-cell border-top-color="red"
+                border-top-width="0.5pt" border-top-style="solid">
+                <fo:block text-align="center">
+                  red top
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-right-color="blue"
+                border-right-width="0.5pt" border-right-style="solid">
+                <fo:block text-align="center">
+                  blue right
+                </fo:block>
+              </fo:table-cell>
+
+              <fo:table-cell border-left-color="green"
+                border-left-width="0.5pt" border-left-style="solid"
+                border-top-color="red" border-top-width="0.5pt"
+                border-top-style="solid" border-right-color="blue"
+                border-right-width="0.5pt" border-right-style="solid"
+                border-bottom-color="yellow" border-bottom-width="0.5pt"
+                border-bottom-style="solid">
+                <fo:block text-align="center">
+                  all
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+
+            <fo:table-row>
+              <fo:table-cell border-color="green"
+                border-left-width="2pt" border-style="solid">
+                <fo:block text-align="center">
+                  2pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-top-color="red"
+                border-top-width="2pt" border-top-style="dashed">
+                <fo:block text-align="center">
+                  2pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-right-color="blue"
+                border-right-width="2pt" border-right-style="dotted">
+                <fo:block text-align="center">
+                  2pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-bottom-color="yellow"
+                border-bottom-width="2pt" border-bottom-style="double">
+                <fo:block text-align="center">
+                  2pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-left-color="green"
+                border-left-width="2pt" border-left-style="solid"
+                border-top-color="red" border-top-width="2pt"
+                border-top-style="dashed" border-right-color="blue"
+                border-right-width="2pt" border-right-style="double"
+                border-bottom-color="yellow" border-bottom-width="2pt"
+                border-bottom-style="dotted">
+                <fo:block text-align="center">
+                  2pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+
+            <fo:table-row>
+              <fo:table-cell border-left-color="green"
+                border-left-width="10pt" border-left-style="solid">
+                <fo:block text-align="center">
+                  10pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-top-color="red"
+                border-top-width="10pt" border-top-style="solid">
+                <fo:block text-align="center">
+                  10pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-right-color="blue"
+                border-right-width="10pt" border-right-style="solid">
+                <fo:block text-align="center">
+                  10pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-bottom-color="yellow"
+                border-bottom-width="10pt" border-bottom-style="solid">
+                <fo:block text-align="center">
+                  10pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-left-color="green"
+                border-left-width="2pt" border-left-style="solid"
+                border-top-color="red" border-top-width="4pt"
+                border-top-style="solid" border-right-color="blue"
+                border-right-width="8pt" border-right-style="solid"
+                border-bottom-color="yellow" border-bottom-width="10pt"
+                border-bottom-style="solid">
+                <fo:block text-align="center">
+                  2pt - 10pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+            <fo:table-row>
+              <fo:table-cell border-color="green"
+                border-width="0.5pt" border-style="solid">
+                <fo:block text-align="center">
+                  0.5pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-color="red"
+                border-width="1pt" border-style="solid">
+                <fo:block text-align="center">
+                  1pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-color="blue"
+                border-width="2pt" border-style="solid">
+                <fo:block text-align="center">
+                  2pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-color="yellow"
+                border-width="10pt" border-style="solid">
+                <fo:block text-align="center">
+                  10pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell border-color="yellow"
+                border-width="20pt" border-style="solid">
+                <fo:block text-align="center">
+                  20pt
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+
+          </fo:table-body>
+        </fo:table>
+
+        <fo:block space-before.optimum="30pt"
+          space-after.optimum="15pt">
+          Table 2: row borders
+        </fo:block>
+
+        <fo:table border-collapse="collapse" table-layout="fixed"
+          width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+
+          <fo:table-body>
+            <fo:table-row border-left-color="green"
+              border-left-width="0.5pt" border-left-style="solid">
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  row with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  green left
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+            <fo:table-row border-top-color="red"
+              border-top-width="0.5pt" border-top-style="solid">
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  row with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  red top
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+            <fo:table-row border-right-color="blue"
+              border-right-width="0.5pt" border-right-style="solid">
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  row with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  blue right
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+            <fo:table-row border-bottom-color="yellow"
+              border-bottom-width="0.5pt" border-bottom-style="solid">
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  row with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  yellow bottom
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+            <fo:table-row border-color="purple"
+              border-width="0.5pt" border-style="solid">
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  row with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  all
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+        <fo:block space-before.optimum="30pt"
+          space-after.optimum="15pt">
+          Table 3: column borders
+        </fo:block>
+
+        <fo:table border-collapse="collapse" table-layout="fixed"
+          width="100%">
+          <fo:table-column column-width="3cm"
+            border-left-color="green" border-left-width="0.5pt"
+            border-left-style="solid" />
+          <fo:table-column column-width="3cm"
+            border-top-color="red" border-top-width="0.5pt"
+            border-top-style="solid" />
+          <fo:table-column column-width="3cm"
+            border-right-color="blue" border-right-width="0.5pt"
+            border-right-style="solid" />
+          <fo:table-column column-width="3cm"
+            border-bottom-color="yellow" border-bottom-width="0.5pt"
+            border-bottom-style="solid" />
+          <fo:table-column column-width="3cm"
+            border-color="orange" border-width="0.5pt" border-style="solid" />
+
+          <fo:table-body>
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  table columns
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  different
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  borders
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  extra
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  table row
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+
+        <fo:block space-before.optimum="30pt"
+          space-after.optimum="15pt">
+          Table 4: column borders over page
+        </fo:block>
+
+        <fo:table border-collapse="collapse" table-layout="fixed"
+          width="100%">
+          <fo:table-column column-width="3cm"
+            border-left-color="green" border-left-width="0.5pt"
+            border-left-style="solid" />
+          <fo:table-column column-width="3cm"
+            border-top-color="red" border-top-width="0.5pt"
+            border-top-style="solid" />
+          <fo:table-column column-width="3cm"
+            border-right-color="blue" border-right-width="0.5pt"
+            border-right-style="solid" />
+          <fo:table-column column-width="3cm"
+            border-bottom-color="yellow" border-bottom-width="0.5pt"
+            border-bottom-style="solid" />
+          <fo:table-column column-width="3cm"
+            border-color="orange" border-width="0.5pt" border-style="solid" />
+
+          <fo:table-body>
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  table columns
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  different
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  borders
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  extra
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  table row
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+        <fo:block space-before.optimum="30pt"
+          space-after.optimum="15pt">
+          Table 5: body borders
+        </fo:block>
+
+        <fo:table border-collapse="separate" table-layout="fixed"
+          width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+
+          <fo:table-body border-left-color="green"
+            border-left-width="0.5pt" border-left-style="solid">
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  body with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  left border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+
+        <fo:table border-collapse="separate" table-layout="fixed"
+          width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-body border-top-color="red"
+            border-top-width="0.5pt" border-top-style="solid">
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  body with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  top border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+        <fo:table border-collapse="separate" table-layout="fixed"
+          width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+
+          <fo:table-body border-right-color="blue"
+            border-right-width="0.5pt" border-right-style="solid">
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  body with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  right border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+        <fo:table border-collapse="separate" table-layout="fixed"
+          width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+
+          <fo:table-body border-bottom-color="yellow"
+            border-bottom-width="0.5pt" border-bottom-style="solid">
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  body with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  bottom border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+        <fo:table border-collapse="separate" table-layout="fixed"
+          width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+
+          <fo:table-body border-color="orange"
+            border-width="0.5pt" border-style="solid">
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  body with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  all border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in
+                  the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+        <fo:block space-before.optimum="30pt"
+          space-after.optimum="15pt">
+          Table 6: table borders
+        </fo:block>
+
+        <fo:table border-left-color="green" border-left-width="0.5pt"
+          border-left-style="solid" border-collapse="separate"
+          table-layout="fixed" width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+
+          <fo:table-body>
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  table with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  left border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+
+        <fo:table border-top-color="red" border-top-width="0.5pt"
+          border-top-style="solid" border-collapse="separate"
+          table-layout="fixed" width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+
+          <fo:table-body>
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  table with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  top border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+
+        <fo:table border-right-color="blue" border-right-width="0.5pt"
+          border-right-style="solid" border-collapse="separate"
+          table-layout="fixed" width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+
+          <fo:table-body>
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  table with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  right border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+        <fo:table border-bottom-color="yellow"
+          border-bottom-width="0.5pt" border-bottom-style="solid"
+          border-collapse="separate" table-layout="fixed" width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+
+          <fo:table-body>
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  table with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  bottom border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+
+        <fo:table border-color="orange" border-width="0.5pt"
+          border-style="solid" border-collapse="separate" table-layout="fixed"
+          width="100%">
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+          <fo:table-column column-width="3cm" />
+
+          <fo:table-body>
+            <fo:table-row>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  table with
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  all border
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                </fo:block>
+              </fo:table-cell>
+              <fo:table-cell>
+                <fo:block text-align="center">
+                  text for an extra line in the table row
+                </fo:block>
+              </fo:table-cell>
+            </fo:table-row>
+          </fo:table-body>
+        </fo:table>
+
+      </fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+</fo:root>

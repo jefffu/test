@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="normal"
+      page-height="210mm" page-width="297mm"
+      margin-top="20mm" margin-bottom="20mm"
+      margin-left="25mm" margin-right="25mm">
+      <fo:region-body margin-bottom="20mm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+  <fo:page-sequence master-reference="normal">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:table border-collapse="collapse" table-layout="fixed" width="100%" font-family="SimSun">
+        <fo:table-column column-width="14%" />
+        <fo:table-column column-width="14%" />
+        <fo:table-column column-width="30%" />
+        <fo:table-column column-width="14%" />
+        <fo:table-column column-width="14%" />
+        <fo:table-column column-width="14%" />
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="6">
+              <fo:block text-align="center">测试标题</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block font-weight="bold" text-align="center">标题一</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block font-weight="bold" text-align="center">标题二</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block font-weight="bold" text-align="center">标题三</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block font-weight="bold" text-align="center">标题四</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block font-weight="bold" text-align="center">标题五</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block font-weight="bold" text-align="center">标题六</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+
+          <fo:table-row>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border-color="black"
+                border-width="1pt" border-style="solid">
+              <fo:block text-align="center">fdafdafda</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:flow>
+  </fo:page-sequence>
+</fo:root>
