@@ -10,11 +10,10 @@ public class SignatureServiceImpl extends AbstractSecurityService implements Sig
     @Override
     public byte[] sign(byte[] text) {
         try {
-            Signature dsa = Signature.getInstance("SHA1withRSA");
-            dsa.initSign(privateKey);
-            dsa.update(text);
-            byte[] realSig = dsa.sign();
-            return realSig;
+            Signature sig = Signature.getInstance("SHA1withRSA");
+            sig.initSign(privateKey);
+            sig.update(text);
+            return sig.sign();
         } catch (NoSuchAlgorithmException
                 | InvalidKeyException | SignatureException e) {
             throw new RuntimeException("Sign exception", e);

@@ -4,5 +4,5 @@ public interface EncryptionService {
 
     byte[] encrypt(byte[] plain);
 
-    byte[] decrypt(byte[] cipher);
+    byte[] decrypt(byte[] secret);
 }

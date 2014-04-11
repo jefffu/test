@@ -14,9 +14,9 @@ public class EncryptionServiceImpl extends AbstractSecurityService implements
     @Override
     public byte[] encrypt(byte[] plain) {
         try {
-            Cipher rsa = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-            rsa.init(Cipher.ENCRYPT_MODE, certificate);
-            return rsa.doFinal(plain);
+            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+            cipher.init(Cipher.ENCRYPT_MODE, certificate);
+            return cipher.doFinal(plain);
         } catch (NoSuchAlgorithmException | NoSuchPaddingException
                 | InvalidKeyException | IllegalBlockSizeException
                 | BadPaddingException e) {
@@ -25,11 +25,11 @@ public class EncryptionServiceImpl extends AbstractSecurityService implements
     }
 
     @Override
-    public byte[] decrypt(byte[] cipher) {
+    public byte[] decrypt(byte[] secret) {
         try {
-            Cipher rsa = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-            rsa.init(Cipher.DECRYPT_MODE, privateKey);
-            return rsa.doFinal(cipher);
+            Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+            cipher.init(Cipher.DECRYPT_MODE, privateKey);
+            return cipher.doFinal(secret);
         } catch (NoSuchAlgorithmException | NoSuchPaddingException
                 | InvalidKeyException | IllegalBlockSizeException
                 | BadPaddingException e) {
