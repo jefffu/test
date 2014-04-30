@@ -19,6 +19,7 @@
   <modules>
     <module>test-pdf</module>
     <module>test-security</module>
+    <module>test-email</module>
   </modules>
 
   <dependencies>
