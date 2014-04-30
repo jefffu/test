@@ -12,7 +12,7 @@ import org.junit.Test;
 public class TestSendEmailService {
 
     private SendEmailService sendEmailService = new SendEmailServiceSmtp(
-            "smtpHost", null, true, "smtpUser", "smtpPassword",
+            "smtpHost", 25, false, true, "smtpUser", "smtpPassword",
             "fromEmail", "fromName");
 
     @Test

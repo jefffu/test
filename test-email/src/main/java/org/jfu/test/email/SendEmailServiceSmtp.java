@@ -21,13 +21,17 @@ public class SendEmailServiceSmtp implements SendEmailService {
     private String password;
     private String fromEmail;
     private String fromName;
+    private String prot = "smtp";
 
     private Session session;
 
-    public SendEmailServiceSmtp(String host, Integer port, boolean auth,
+    public SendEmailServiceSmtp(String host, Integer port, boolean enableSsl, boolean auth,
             String user, String password, String fromEmail, String fromName) {
         this.host = host;
         this.port = port;
+        if (enableSsl) {
+            this.prot = "smtps";
+        }
         this.auth = auth;
         this.user = user;
         this.password = password;
@@ -39,19 +43,20 @@ public class SendEmailServiceSmtp implements SendEmailService {
 
     private Session createSession() {
         Properties props = System.getProperties();
-        props.put("mail.smtp.host", host);
+
+        props.put("mail."+prot+".host", host);
         if (port != null) {
-            props.put("mail.smtp.port", port);
+            props.put("mail."+prot+".port", port);
         }
         if (auth) {
-            props.put("mail.smtp.auth", true);
+            props.put("mail."+prot+".auth", true);
         }
         Session session = Session.getInstance(props, null);
         return session;
     }
 
     private Transport connect() throws MessagingException {
-        Transport t = session.getTransport("smtp");
+        Transport t = session.getTransport(prot);
         if (auth) {
             t.connect(user, password);
         } else {
