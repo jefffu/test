@@ -1,8 +1,9 @@
 package org.jfu.test.security.signature;
 
-import org.jfu.test.security.ByteHelper;
+import java.util.Random;
+
 import org.jfu.test.security.EncryptionService;
-import org.jfu.test.security.EncryptionServiceImpl;
+import org.jfu.test.security.EncryptionServiceUnsymmetricImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -11,20 +12,30 @@ import org.slf4j.LoggerFactory;
 public class TestEncryptionService {
     private static Logger logger = LoggerFactory.getLogger(TestEncryptionService.class);
 
-    private EncryptionService encryptionService = new EncryptionServiceImpl();
+    private EncryptionService encryptionService = new EncryptionServiceUnsymmetricImpl();
+
+    private Random random = new Random(System.nanoTime());
+    private static final String SEEDS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+    private String generate(int length) {
+        String result = "";
+        for (int i=0; i<length; i++) {
+            random.setSeed(random.nextLong());
+            result += SEEDS.charAt(random.nextInt(SEEDS.length()));
+        }
+        return result;
+    }
 
     @Test
     public void test() {
-        String plain = "test";
+        String plain = generate(8);
 
-        String hex = ByteHelper.toHex(plain.getBytes());
-        logger.debug("Hex for plain: " + hex);
-        byte[] fromHex = ByteHelper.toByteArray(hex);
-        logger.debug("Plain from hex: " + new String(fromHex));
-
+        logger.debug("Plain text: " + plain);
         byte[] cipher = encryptionService.encrypt(plain.getBytes());
+        logger.debug("Cipher length: " + cipher.length);
 
         byte[] decrpted = encryptionService.decrypt(cipher);
+        logger.debug("Plain text from cipher: " + new String(decrpted));
 
         Assert.assertEquals(plain, new String(decrpted));
 

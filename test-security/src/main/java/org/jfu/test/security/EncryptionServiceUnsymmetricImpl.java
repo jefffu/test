@@ -8,7 +8,7 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
-public class EncryptionServiceImpl extends AbstractSecurityService implements
+public class EncryptionServiceUnsymmetricImpl extends AbstractSecurityService implements
         EncryptionService {
 
     @Override
