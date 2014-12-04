@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+  xsi:schemaLocation="
+    http://www.osgi.org/xmlns/blueprint/v1.0.0
+    http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+  <bean id="mediaServlet" class="video.servlet.MediaServletActivator"
+    init-method="starting" destroy-method="stopping">
+    <property name="m_media_dir" value="/tmp/media"/>
+    <property name="httpService" ref="httpService"/>
+  </bean>
+
+  <reference id="httpService" interface="org.osgi.service.http.HttpService"/>
+
+</blueprint>
+

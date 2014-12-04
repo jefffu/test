@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component-set>
+  <components>
+  <!--
+    <component>
+      <role>org.jfu.test.sisu.plexus.Greeting</role>
+      <role-hint>hi</role-hint>
+      <implementation>org.jfu.test.sisu.plexus.impl.Hi</implementation>
+    </component>
+
+    <component>
+      <role>org.jfu.test.sisu.plexus.Greeting</role>
+      <role-hint>hello</role-hint>
+      <implementation>org.jfu.test.sisu.plexus.impl.Hello</implementation>
+    </component>
+  -->
+    <component>
+      <role>org.jfu.test.sisu.plexus.Person</role>
+      <role-hint>jefffu</role-hint>
+      <implementation>org.jfu.test.sisu.plexus.Person</implementation>
+      <configuration>
+        <name>Jeff</name>
+      </configuration>
+    </component>
+  </components>
+</component-set>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipojo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="org.apache.felix.ipojo http://felix.apache.org/ipojo/schemas/CURRENT/core.xsd"
+  xmlns="org.apache.felix.ipojo">
+
+  <component classname="hello.client.HelloClient">
+    <requires field="m_hello" />
+    <callback transition="validate" method="starting" />
+    <callback transition="invalidate" method="stopping" />
+    <properties>
+      <property field="m_name" name="hello.name" />
+    </properties>
+  </component>
+
+  <instance component="hello.client.HelloClient">
+    <property name="hello.name" value="jeff" />
+  </instance>
+</ipojo>
