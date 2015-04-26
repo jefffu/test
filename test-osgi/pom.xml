@@ -16,6 +16,9 @@
   <modules>
     <module>test-hello</module>
     <module>test-video</module>
+    <module>test-wicket</module>
+    <module>test-wab</module>
+    <module>test-jooq</module>
   </modules>
 
   <build>
