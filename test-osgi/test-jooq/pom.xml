@@ -22,22 +22,30 @@
       <groupId>org.jooq</groupId>
       <artifactId>jooq</artifactId>
       <version>${org.jooq.version}</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-dbcp2</artifactId>
       <version>2.1</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.35</version>
-      <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.compendium</artifactId>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -49,11 +57,22 @@
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Bundle-Version>${project.version}</Bundle-Version>
+
+            <Import-Package>
+              javax.sql,
+              org.apache.commons.dbcp2,
+              org.jfu.test.jooq.api.*,
+              org.jooq.*,
+              org.osgi.service.blueprint,
+              org.osgi.service.log,
+              com.mysql.jdbc
+            </Import-Package>
+
             <Private-Package>
-              org.jfu.test.jooq.impl
+              org.jfu.test.jooq.impl.*
             </Private-Package>
             <Export-Package>
-              org.jfu.test.jooq.api
+              org.jfu.test.jooq.api.*
             </Export-Package>
           </instructions>
         </configuration>
@@ -97,6 +116,26 @@
             <scope>runtime</scope>
           </dependency>
         </dependencies>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.9.1</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>target/generated-sources/jooq-mysql</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

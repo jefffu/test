@@ -6,8 +6,8 @@
   <display-name>Test Wicket Web Application</display-name>
 
   <filter>
-    <display-name>Wicket Filter</display-name>
-    <filter-name>wicketFilter</filter-name>
+    <display-name>WAB Wicket Filter</display-name>
+    <filter-name>wabWicketFilter</filter-name>
     <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
     <init-param>
       <param-name>applicationClassName</param-name>
@@ -16,7 +16,7 @@
   </filter>
 
   <filter-mapping>
-    <filter-name>wicketFilter</filter-name>
+    <filter-name>wabWicketFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 

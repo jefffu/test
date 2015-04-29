@@ -13,13 +13,34 @@
   <packaging>pom</packaging>
   <name>test-osgi</name>
 
+  <properties>
+    <osgi.version>5.0.0</osgi.version>
+  </properties>
+
   <modules>
     <module>test-hello</module>
     <module>test-video</module>
     <module>test-wicket</module>
     <module>test-wab</module>
     <module>test-jooq</module>
+    <module>test-fragment</module>
   </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.core</artifactId>
+        <version>${osgi.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.compendium</artifactId>
+        <version>${osgi.version}</version>
+    </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <build>
     <pluginManagement>
