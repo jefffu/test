@@ -24,6 +24,7 @@
     <module>test-wab</module>
     <module>test-jooq</module>
     <module>test-fragment</module>
+    <module>test-mapdb</module>
   </modules>
 
   <dependencyManagement>
@@ -32,13 +33,22 @@
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.core</artifactId>
         <version>${osgi.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.compendium</artifactId>
         <version>${osgi.version}</version>
-    </dependency>
+        <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.karaf.shell</groupId>
+        <artifactId>org.apache.karaf.shell.console</artifactId>
+        <version>4.0.0-SNAPSHOT</version>
+        <scope>provided</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
