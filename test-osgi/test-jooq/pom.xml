@@ -55,9 +55,11 @@
         <artifactId>maven-bundle-plugin</artifactId>
         <configuration>
           <instructions>
+            <!--
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+            -->
             <Bundle-Version>${project.version}</Bundle-Version>
-
+            <!--
             <Import-Package>
               javax.sql,
               org.apache.commons.dbcp2,
@@ -74,6 +76,7 @@
             <Export-Package>
               org.jfu.test.jooq.api.*
             </Export-Package>
+            -->
           </instructions>
         </configuration>
       </plugin>
