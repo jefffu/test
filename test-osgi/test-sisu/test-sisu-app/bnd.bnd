@@ -1,0 +1,2 @@
+-privatepackage: org.jfu.test.sisu.app
+Bundle-Activator: org.jfu.test.sisu.app.Activator

@@ -19,14 +19,14 @@ public class DbListCommand implements Action {
     private DB db;
 
     @Argument(index=0, name="id", required=false, multiValued=false)
-    Integer id;
+    String id;
 
     @Override
     public Object execute() throws Exception {
-        NavigableSet<Object[]> id2friends = db.treeSet("id2friends");
+        NavigableSet<Object[]> anyobjects = db.treeSet("anyobjects");
 
         if (id == null) {
-            Iterator<Object[]> iter = id2friends.iterator();
+            Iterator<Object[]> iter = anyobjects.iterator();
             while (iter.hasNext()) {
                 Object[] objects = iter.next();
                 for (Object obj : objects) {
@@ -36,7 +36,7 @@ public class DbListCommand implements Action {
                 System.out.println("------");
             }
         } else {
-            for (Object[] k : Fun.filter(id2friends, id)) {
+            for (Object[] k : Fun.filter(anyobjects, id)) {
                 String name = (String)k[1];
                 System.out.println(name);
             }

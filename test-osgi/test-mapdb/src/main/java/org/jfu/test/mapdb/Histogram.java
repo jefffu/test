@@ -1,0 +1,38 @@
+package org.jfu.test.mapdb;
+
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
+import org.mapdb.Bind;
+import org.mapdb.DBMaker;
+import org.mapdb.Fun;
+import org.mapdb.HTreeMap;
+
+public class Histogram {
+
+    public static void main(String[] args) {
+        HTreeMap<Long, Double> map = DBMaker.tempHashMap();
+
+        // histogram, category is a key, count is a value
+        ConcurrentMap<String, Long> histogram = new ConcurrentHashMap<String, Long>(); //any map will do
+
+        // bind histogram to primary map
+        // we need function which returns category for each map entry
+        Bind.histogram(map, histogram, new Fun.Function2<String, Long, Double>(){
+            @Override
+            public String run(Long key, Double value) {
+                if(value<0.25) return "first quarter";
+                else if(value<0.5) return "second quarter";
+                else if(value<0.75) return "third quarter";
+                else return "fourth quarter";
+            }
+        });
+
+        //insert some random stuff
+        for(long key=0;key<1e4;key++){
+            map.put(key, Math.random());
+        }
+
+        System.out.println(histogram);
+    }
+}

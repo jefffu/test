@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.3.0"
+  name="test-sisu-feature">
+  <feature name="test-sisu-feature" description="Test Sisu Feature"
+    version="1.0.0.SNAPSHOT">
+    <!-- <bundle start-level="200">mvn:org.jfu/test-sisu-app/${project.version}</bundle> -->
+  </feature>
+</features>

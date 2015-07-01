@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+  xsi:schemaLocation="
+    http://www.osgi.org/xmlns/blueprint/v1.0.0
+    http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+  <service ref="testSisu" interface="org.jfu.test.sisu.api.TestSisu" />
+
+  <bean id="testSisu" class="org.jfu.test.sisu.impl.TestSisuImpl">
+    <property name="logService" ref="logService" />
+  </bean>
+
+  <reference id="logService" interface="org.osgi.service.log.LogService">
+    <reference-listener bind-method="setLogService"
+      ref="testSisu" />
+  </reference>
+
+</blueprint>
+

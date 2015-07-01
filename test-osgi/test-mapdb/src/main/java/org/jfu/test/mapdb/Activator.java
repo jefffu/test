@@ -1,5 +1,6 @@
 package org.jfu.test.mapdb;
 
+import java.io.File;
 import java.util.NavigableSet;
 
 import org.mapdb.BTreeKeySerializer;
@@ -16,8 +17,9 @@ public class Activator implements BundleActivator {
 
     @Override
     public void start(BundleContext context) throws Exception {
-        DB db = DBMaker.memoryDB().make();
+        DB db = DBMaker.fileDB(new File("/tmp/git-index/commit.idx")).make();
 
+        /*
         BTreeMap<Integer, Person> friends = db.treeMap("friends");
 
         NavigableSet<Object[]> id2friends = db.treeSetCreate("id2friends")
@@ -29,6 +31,20 @@ public class Activator implements BundleActivator {
             public String[] run(Integer a, Person b) {
                 return b.friends.split(",");
             }
+        });
+
+        */
+        BTreeMap<String, Commit> commits = db.treeMap("commits");
+        NavigableSet<Object[]> values = db.treeSetCreate("anyobjects")
+                .serializer(BTreeKeySerializer.ARRAY2).makeOrGet();
+
+        Bind.secondaryKeys(commits, values, new Fun.Function2<String[], String, Commit>() {
+
+            @Override
+            public String[] run(String a, Commit b) {
+                return b.getAnyobjects().toArray(new String[0]);
+            }
+
         });
 
         context.registerService(DB.class, db, null);
