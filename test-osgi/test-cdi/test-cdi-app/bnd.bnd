@@ -1,0 +1,2 @@
+-privatepackage: org.jfu.test.cdi.app
+Karaf-Commands: org.jfu.test.cdi.app

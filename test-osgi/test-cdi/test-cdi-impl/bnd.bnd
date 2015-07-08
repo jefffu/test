@@ -1,0 +1,4 @@
+-privatepackage: org.jfu.test.cdi.impl
+Require-Capability : \
+  org.ops4j.pax.cdi.extension;filter:="(extension=pax-cdi-extension)", \
+  osgi.extender;filter:="(osgi.extender=pax.cdi)"

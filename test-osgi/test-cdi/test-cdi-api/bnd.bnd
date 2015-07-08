@@ -1,0 +1,2 @@
+-exportcontents: org.jfu.test.cdi.api
+#Require-Capability : osgi.extender; filter:="(osgi.extender=pax.cdi)"
