@@ -26,6 +26,8 @@
     <module>test-maven-plugin</module>
     <module>test-sisu-plexus</module>
     <module>test-osgi</module>
+    <module>test-logback</module>
+    <module>test-javafx</module>
   </modules>
 
   <dependencies>
@@ -40,6 +42,7 @@
       <artifactId>slf4j-api</artifactId>
     </dependency>
 
+    <!--
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
@@ -57,6 +60,7 @@
       <artifactId>log4j</artifactId>
       <scope>provided</scope>
     </dependency>
+    -->
   </dependencies>
 
   <dependencyManagement>
