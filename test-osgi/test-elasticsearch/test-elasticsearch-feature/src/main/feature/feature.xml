@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.3.0" name="test-elasticsearch-feature">
+    <feature name="test-elasticsearch-feature" description="Test Elastic Search Feature" version="${project.version}">
+    </feature>
+</features>

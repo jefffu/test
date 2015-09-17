@@ -1,0 +1,5 @@
+Permissions: all-permissions
+Codebase: jnlp.ahamojo.com
+Application-Name: Test Gesture
+Main-Class: org.jfu.test.javafx.TestGesture
+JavaFX-Application-Class: org.jfu.test.javafx.TestGesture

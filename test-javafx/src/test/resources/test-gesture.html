@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Test Gesture</title>
+<script src="http://java.com/js/dtjava.js"></script>
+</head>
+<body>
+  <h1>Test Gesture</h1>
+  
+  <div id="test_gesture_container"></div>
+<script>
+function deployIt() {
+  dtjava.embed(
+    {
+      id: "test-gesture",
+      url: "test-gesture.jnlp",
+      width: 500,
+      height: 400,
+      placeholder: "test_gesture_container"
+    },
+    {
+      javafx: "2.1+",
+      jvm: "1.7+",
+      toolkit: "swing"
+    },
+    {}
+  );
+}
+dtjava.addOnloadCallback(deployIt);
+</script>
+
+</body>
+</html>

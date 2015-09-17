@@ -28,6 +28,7 @@
     <module>test-osgi</module>
     <module>test-logback</module>
     <module>test-javafx</module>
+    <module>test-weld</module>
   </modules>
 
   <dependencies>

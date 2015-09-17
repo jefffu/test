@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" href="test-gesture.jnlp" version="1.0-SNAPSHOT">
+  <information>
+    <title>Test Gesture</title>
+    <vendor>Jeff Fu</vendor>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.7+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="test-javafx-1.0-SNAPSHOT.jar" main="true" />
+  </resources>
+  <applet-desc
+    name="Test Gesture Applet"
+    main-class="org.jfu.test.javafx.TestGestureApplet"
+    width="500"
+    height="400">
+  </applet-desc>
+  <update check="background"/>
+  <security>
+    <all-permissions/>
+  </security>
+</jnlp>

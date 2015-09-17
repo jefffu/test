@@ -10,17 +10,10 @@
   </parent>
 
   <artifactId>test-wicket</artifactId>
-  <packaging>bundle</packaging>
+  <packaging>war</packaging>
   <name>Test Wicket</name>
 
   <dependencies>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.4</version>
-      <scope>provided</scope>
-    </dependency>
-
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
@@ -50,13 +43,62 @@
     <dependency>
       <groupId>org.apache.wicket</groupId>
       <artifactId>wicket-core</artifactId>
-      <version>7.0.0-SNAPSHOT</version>
+      <version>7.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.wicket</groupId>
+      <artifactId>wicket-cdi-1.1</artifactId>
+      <version>7.0.0</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
       <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.4</version>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.enterprise</groupId>
+      <artifactId>cdi-api</artifactId>
+      <version>1.2</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.ops4j.pax.cdi</groupId>
+      <artifactId>pax-cdi-api</artifactId>
+      <scope>provided</scope>
+      <version>1.0.0.RC1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.ops4j.pax.cdi</groupId>
+      <artifactId>pax-cdi-spi</artifactId>
+      <scope>provided</scope>
+      <version>1.0.0.RC1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.ahamojo</groupId>
+      <artifactId>dam-repo-api</artifactId>
+      <version>1.0-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -64,10 +106,33 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <archive>
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>bundle-manifest</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
+          </execution>
+        </executions>
         <configuration>
+          <supportedProjectTypes>
+            <supportedProjectType>war</supportedProjectType>
+          </supportedProjectTypes>
           <instructions>
+            <!--
             <Bundle-SymbolicName></Bundle-SymbolicName>
             <Bundle-Version>${project.version}</Bundle-Version>
             <Bundle-Activator>org.jfu.test.wicket.Activator</Bundle-Activator>
@@ -75,9 +140,23 @@
               org.jfu.test.wicket
             </Private-Package>
             <Import-Package>
-              javax.servlet.*; version="2.5",
+              javax.servlet.*,
               *
             </Import-Package>
+            -->
+            <Embed-Dependency>*;scope=compile</Embed-Dependency>
+            <Embed-Directory>WEB-INF/lib</Embed-Directory>
+            <Embed-Transitive>false</Embed-Transitive>
+            <_wab>src/main/webapp</_wab>
+            <Web-ContextPath>/wicket</Web-ContextPath>
+            <Import-Package>
+              !javax.enterprise.event,
+              *
+            </Import-Package>
+            <Require-Capability>
+              org.ops4j.pax.cdi.extension;filter:="(extension=pax-cdi-extension)",
+              osgi.extender;filter:="(osgi.extender=pax.cdi)"
+            </Require-Capability>
           </instructions>
         </configuration>
       </plugin>

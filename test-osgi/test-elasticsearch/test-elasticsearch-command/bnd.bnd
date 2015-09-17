@@ -1,0 +1,6 @@
+Private-Package: *
+Import-Package: *
+Karaf-Commands: \
+    org.jfu.test.elasticsearch.command
+Bundle-SymbolicName: org.jfu.test-elasticsearch
+Bundle-Name: test-elasticsearch

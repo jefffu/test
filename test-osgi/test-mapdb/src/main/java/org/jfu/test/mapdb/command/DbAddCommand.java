@@ -32,8 +32,8 @@ public class DbAddCommand implements Action {
     public Object execute() throws Exception {
 
 
-        BTreeMap<String, Commit> map = db.treeMap("commits");
-        map.put(id, new Commit(id, lastmodified, Arrays.asList(anyobjects.split(","))));
+//        BTreeMap<String, Commit> map = db.treeMap("commits");
+//        map.put(id, new Commit(id, lastmodified, Arrays.asList(anyobjects.split(","))));
 
         return null;
     }

@@ -11,7 +11,7 @@ import org.mapdb.HTreeMap;
 public class Histogram {
 
     public static void main(String[] args) {
-        HTreeMap<Long, Double> map = DBMaker.tempHashMap();
+        HTreeMap<Long, Double> map = DBMaker.newTempHashMap();
 
         // histogram, category is a key, count is a value
         ConcurrentMap<String, Long> histogram = new ConcurrentHashMap<String, Long>(); //any map will do

@@ -45,7 +45,7 @@
     <dependency>
       <groupId>org.apache.wicket</groupId>
       <artifactId>wicket-core</artifactId>
-      <version>7.0.0-SNAPSHOT</version>
+      <version>7.0.0</version>
     </dependency>
 
     <dependency>
@@ -61,6 +61,15 @@
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
         <extensions>true</extensions>
+        <executions>
+          <execution>
+            <id>bundle-manifest</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
+          </execution>
+        </executions>
         <configuration>
           <instructions>
             <Web-ContextPath>/test.wab</Web-ContextPath>
@@ -71,7 +80,7 @@
     </plugins>
   </build>
 
-<!-- It doesn't work, because the 'Bundle-ClassPath' header isn't been set.
+<!-- It doesn't work, because the 'Bundle-ClassPath' header hasn't been set.
   <build>
     <plugins>
       <plugin>

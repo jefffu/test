@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.jfu</groupId>
@@ -14,4 +15,50 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jarsigner-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>sign</id>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <alias>jnlp</alias>
+          <keystore>src/main/jnlp/my.jks</keystore>
+          <storepass>storepass</storepass>
+          <keypass>keypass</keypass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <!-- <build> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId> <version>1.6</version> <executions>
+    <execution> <phase>package</phase> <goals> <goal>shade</goal> </goals> <configuration>
+    <transformers> <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+    <mainClass>org.jfu.test.javafx.TestGesture</mainClass> </transformer> </transformers>
+    </configuration> </execution> </executions> </plugin> </plugins> </build>
+    <profiles> <profile> <id>jnlp</id> <build> <plugins> <plugin> <groupId>org.codehaus.mojo</groupId>
+    <artifactId>webstart-maven-plugin</artifactId> <version>1.0-beta-6</version>
+    <executions> <execution> <phase>package</phase> <goals> <goal>jnlp</goal>
+    </goals> </execution> </executions> <configuration> <codebase>http://localhost/jnlp/</codebase>
+    <jnlp> <mainClass>org.jfu.test.javafx.TestGesture</mainClass> </jnlp> <pack200>true</pack200>
+    <sign> <keystore>${project.basedir}/src/main/jnlp/my.jks</keystore> <keypass>keypass</keypass>
+    <storepass>storepass</storepass> <alias>jnlp</alias> <verify>false</verify>
+    </sign> <verbose>true</verbose> </configuration> </plugin> </plugins> </build>
+    </profile> </profiles> -->
 </project>

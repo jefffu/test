@@ -15,19 +15,20 @@
 
   <properties>
     <osgi.version>5.0.0</osgi.version>
-    <karaf.version>4.0.1-SNAPSHOT</karaf.version>
+    <karaf.version>4.0.1</karaf.version>
   </properties>
 
   <modules>
     <module>test-hello</module>
-    <module>test-video</module>
-    <module>test-wicket</module>
     <module>test-wab</module>
     <module>test-jooq</module>
     <module>test-fragment</module>
     <module>test-mapdb</module>
     <module>test-sisu</module>
     <module>test-cdi</module>
+    <module>test-video</module>
+    <module>test-wicket</module>
+    <module>test-elasticsearch</module>
   </modules>
 
   <dependencyManagement>
@@ -58,7 +59,15 @@
   <build>
     <pluginManagement>
       <plugins>
-
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+            <archive>
+              <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+            </archive>
+          </configuration>
+        </plugin>
         <plugin>
           <groupId>org.apache.karaf.tooling</groupId>
           <artifactId>karaf-maven-plugin</artifactId>
@@ -69,7 +78,7 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>2.5.3</version>
+          <version>2.5.4</version>
           <extensions>true</extensions>
           <configuration>
             <instructions>
@@ -80,7 +89,7 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-ipojo-plugin</artifactId>
-          <version>1.12.0</version>
+          <version>1.12.1</version>
           <executions>
             <execution>
               <goals>

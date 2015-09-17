@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp
+  spec="1.0"
+  xmlns:jfx="http://javafx.com"
+  codebase="http://jnlp.ahamojo.com"
+  href="test-gesture.jnlp">
+  <information>
+    <title>Test Gesture</title>
+    <vendor>Jeff Fu</vendor>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.7.0_06+"
+      href="http://java.sun.com/products/autodl/j2se"/>
+    <jfx:javafx-runtime version="2.1+"
+      href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+    <jar href="test-javafx-1.0-SNAPSHOT.jar" main="true" />
+  </resources>
+  <application-desc
+    name="Test Gesture"
+    main-class="org.jfu.test.javafx.TestGesture"
+    width="500"
+    height="400">
+  </application-desc>
+  <update check="background"/>
+  <security>
+    <all-permissions/>
+  </security>
+</jnlp>

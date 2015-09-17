@@ -17,7 +17,7 @@ public class Activator implements BundleActivator {
 
     @Override
     public void start(BundleContext context) throws Exception {
-        DB db = DBMaker.fileDB(new File("/tmp/git-index/commit.idx")).make();
+        DB db = DBMaker.newFileDB(new File("/tmp/git-index/commit.idx")).make();
 
         /*
         BTreeMap<Integer, Person> friends = db.treeMap("friends");
@@ -34,19 +34,19 @@ public class Activator implements BundleActivator {
         });
 
         */
-        BTreeMap<String, Commit> commits = db.treeMap("commits");
-        NavigableSet<Object[]> values = db.treeSetCreate("anyobjects")
-                .serializer(BTreeKeySerializer.ARRAY2).makeOrGet();
+        BTreeMap<String, Commit> commits = db.createTreeMap("commits").make();
+        NavigableSet<Object> values = db.createTreeSet("anyobjects").serializer(BTreeKeySerializer.TUPLE2).makeOrGet();
 
-        Bind.secondaryKeys(commits, values, new Fun.Function2<String[], String, Commit>() {
-
-            @Override
-            public String[] run(String a, Commit b) {
-                return b.getAnyobjects().toArray(new String[0]);
-            }
-
-        });
-
+//        Bind.secondaryKeys(new Fun.Tuple2(a, b), String, Commit);
+//        Bind.secondaryKeys(commits, values, new Fun.Function2<String[], String, Commit>() {
+//
+//            @Override
+//            public String[] run(String a, Commit b) {
+//                return b.getAnyobjects().toArray(new String[0]);
+//            }
+//
+//        });
+//
         context.registerService(DB.class, db, null);
 
     }

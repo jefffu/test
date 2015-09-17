@@ -14,9 +14,11 @@
 
   <modules>
     <module>hello.service</module>
+    <!--
     <module>hello.impl</module>
-    <module>hello.impl.blueprint</module>
     <module>hello.impl.dm</module>
     <module>hello.client</module>
+    -->
+    <module>hello.impl.blueprint</module>
   </modules>
 </project>
