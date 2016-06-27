@@ -22,3 +22,15 @@ Jeff Fu <jefffu@ahamojo.com>
      |          Lots of work             |
      +-----------------------------------+
 ....
+
+[plantuml, diagram-classes, png]
+....
+class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+....
